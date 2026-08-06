@@ -1,6 +1,10 @@
 # TaskFlow
 
-A Full-Stack, AI-Assisted Task Management Platform built using FastAPI, SQLAlchemy, SQLite, HTML, CSS, and JavaScript.
+## About
+
+TaskFlow is a Full-Stack AI-Assisted Task Management Platform developed as a Capstone Project during my Software Development Engineering program at Masai School.
+
+The project focuses on building a task management system with a FastAPI backend, database integration, frontend interface, algorithm-based features, and AI-assisted task creation.
 
 ## Features
 
