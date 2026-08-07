@@ -7,7 +7,7 @@ TaskFlow is a Full-Stack AI-Assisted Task Management Platform developed as the C
 
 The application enables users to create projects, manage tasks, monitor task statistics, search and sort tasks using custom algorithms, and quickly create tasks from natural language using a deterministic AI mock parser.
 
-The project is built with FastAPI, SQLAlchemy, SQLite, HTML, CSS, and JavaScript.
+---
 
 ## Features
 
@@ -42,21 +42,20 @@ The project is built with FastAPI, SQLAlchemy, SQLite, HTML, CSS, and JavaScript
 
 ```text
 TaskFlow/
-│
 ├── backend/
 │   ├── app/
-│   └── requirements.txt
-│
+│   ├── requirements.txt
+│   └── taskflow.db
 ├── frontend/
 │   ├── index.html
 │   ├── styles.css
 │   └── script.js
-│
 ├── benchmark.py
 ├── check_algorithms.py
 ├── README.md
 └── requirements.txt
 ```
+---
 
 ## Setup
 
@@ -77,6 +76,7 @@ Install packages
 ```bash
 pip install -r requirements.txt
 ```
+---
 
 ## Running the Application
 
@@ -87,9 +87,11 @@ cd backend
 uvicorn app.main:app --reload
 ```
 
-Backend Runs At:
+Backend Runs At
 
+```text
 http://127.0.0.1:8000
+```
 
 
 ### Frontend
@@ -103,7 +105,11 @@ http://127.0.0.1:8000
 ```
 
 Frontend Runs At:
+
+```text
 http://127.0.0.1:5500
+```
+---
 
 ## Database
 
@@ -156,6 +162,54 @@ The project uses **SQLite** as the database and **SQLAlchemy ORM** for database 
 
 ---
 
+## API Examples
+
+### Create User
+
+**Request**
+
+```json
+{
+  "name": "Devendra",
+  "email": "devendra@example.com"
+}
+```
+
+**Response**
+
+```json
+{
+  "id": 1,
+  "name": "Devendra",
+  "email": "devendra@example.com"
+}
+```
+
+### Create Task
+
+**Request**
+
+```json
+{
+  "title": "Complete README",
+  "priority": "high",
+  "project_id": 1
+}
+```
+
+**Response**
+
+```json
+{
+  "id": 1,
+  "title": "Complete README",
+  "priority": "high",
+  "project_id": 1
+}
+```
+
+---
+
 ## Algorithm Complexity
 
 | Algorithm | Best | Worst |
@@ -195,6 +249,14 @@ Priority values:
 - high
 
 The parser does not require any API key or internet connection.
+
+---
+
+## AI Prompting Technique
+
+The AI Quick Add feature follows a **Zero-Shot Prompting** approach.
+
+Instead of using an external Large Language Model (LLM), this project uses a deterministic rule-based mock parser. The parser extracts the task title, priority, and due date from natural language while producing consistent results without requiring an API key or internet connection.
 
 ---
 
@@ -286,6 +348,8 @@ Output
 
 This project was developed for educational purposes as part of the Software Development Engineering Program at Masai School.
 
+---
+
 ## Author
 
 **Devendra Rathore**
@@ -293,4 +357,3 @@ This project was developed for educational purposes as part of the Software Deve
 Software Development Engineering Student
 
 Masai School
-
