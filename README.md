@@ -1,10 +1,13 @@
 # TaskFlow
+A Full-Stack AI-Assisted Task Management Platform built using FastAPI, SQLAlchemy, SQLite, HTML, CSS, and JavaScript.
 
 ## About
 
-TaskFlow is a Full-Stack AI-Assisted Task Management Platform developed as a Capstone Project during my Software Development Engineering program at Masai School.
+TaskFlow is a Full-Stack AI-Assisted Task Management Platform developed as the Capstone Project for the Software Development Engineering Program at Masai School.
 
-The project focuses on building a task management system with a FastAPI backend, database integration, frontend interface, algorithm-based features, and AI-assisted task creation.
+The application enables users to create projects, manage tasks, monitor task statistics, search and sort tasks using custom algorithms, and quickly create tasks from natural language using a deterministic AI mock parser.
+
+The project is built with FastAPI, SQLAlchemy, SQLite, HTML, CSS, and JavaScript.
 
 ## Features
 
@@ -35,6 +38,26 @@ The project focuses on building a task management system with a FastAPI backend,
 
 ---
 
+## Repository Structure
+
+```text
+TaskFlow/
+│
+├── backend/
+│   ├── app/
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── index.html
+│   ├── styles.css
+│   └── script.js
+│
+├── benchmark.py
+├── check_algorithms.py
+├── README.md
+└── requirements.txt
+```
+
 ## Setup
 
 Create virtual environment
@@ -55,51 +78,81 @@ Install packages
 pip install -r requirements.txt
 ```
 
-Run backend
+## Running the Application
+
+### Backend
 
 ```bash
+cd backend
 uvicorn app.main:app --reload
 ```
 
-Open frontend using Live Server.
+Backend Runs At:
 
----
+http://127.0.0.1:8000
+
+
+### Frontend
+
+Open the `frontend/index.html` file using the **Live Server** extension in VS Code.
+
+The frontend communicates with the FastAPI backend running at:
+
+```
+http://127.0.0.1:8000
+```
+
+Frontend Runs At:
+http://127.0.0.1:5500
+
+## Database
+
+The project uses **SQLite** as the database and **SQLAlchemy ORM** for database operations.
+
+### Tables
+
+- Users
+- Projects
+- Tasks
+
+### Relationships
+
+- One User can have multiple Projects.
+- One Project can have multiple Tasks.
 
 ## API Endpoints
 
 ### Users
 
-- POST /users/
-- GET /users/
+- POST /users/ → Create a new user
+- GET /users/ → Retrieve all users
 
 ### Projects
 
-- POST /projects/
-- GET /projects/
+- POST /projects/ → Create a new project
+- GET /projects/ → Retrieve all projects
 
 ### Tasks
 
-- POST /tasks/
-- GET /tasks/
-- GET /tasks/{id}
-- PUT /tasks/{id}
-- DELETE /tasks/{id}
+- POST /tasks/ → Create a task
+- GET /tasks/ → Retrieve all tasks
+- GET /tasks/{id} → Retrieve a task by ID
+- PUT /tasks/{id} → Update a task
+- DELETE /tasks/{id} → Delete a task
 
 ### Statistics
 
-- GET /statistics/
+- GET /statistics/ → Retrieve project task statistics
 
 ### Algorithms
 
-- GET /tasks?sort=priority
-
-- GET /tasks/search?title=Task Name&algo=linear
-
-- GET /tasks/search?title=Task Name&algo=binary
+- GET /tasks?sort=priority → Sort tasks using Insertion Sort
+- GET /tasks/search?title=Task Name&algo=linear → Search using Linear Search
+- GET /tasks/search?title=Task Name&algo=binary → Search using Binary Search
 
 ### AI
 
-- POST /tasks/quick-add
+- POST /tasks/quick-add → Create a task from a natural language description
 
 ---
 
@@ -226,6 +279,18 @@ Output
 "due_date":"monday"
 }
 ```
-## Creator
-Devendra Rathore
+
+---
+
+## License
+
+This project was developed for educational purposes as part of the Software Development Engineering Program at Masai School.
+
+## Author
+
+**Devendra Rathore**
+
+Software Development Engineering Student
+
+Masai School
 
